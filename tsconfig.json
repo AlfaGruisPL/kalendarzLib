@@ -2,6 +2,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "angular-foundatio": [
+        "dist/angular-foundatio/angular-foundatio",
+        "dist/angular-foundatio"
+      ],
+      "kalendarz": [
+        "dist/kalendarz/kalendarz",
+        "dist/kalendarz"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

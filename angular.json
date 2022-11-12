@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "outputPath": "dist/kalendarzLib",
             "index": "src/index.html",
@@ -95,6 +95,171 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "angular-foundatio": {
+      "projectType": "library",
+      "root": "projects/angular-foundatio",
+      "sourceRoot": "projects/angular-foundatio/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-foundatio/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-foundatio/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-foundatio/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-foundatio/src/test.ts",
+            "tsConfig": "projects/angular-foundatio/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-foundatio/karma.conf.js"
+          }
+        }
+      }
+    },
+    "kalendarz": {
+      "projectType": "library",
+      "root": "projects/kalendarz",
+      "sourceRoot": "projects/kalendarz/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/kalendarz/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/kalendarz/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/kalendarz/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kalendarz/src/test.ts",
+            "tsConfig": "projects/kalendarz/tsconfig.spec.json",
+            "karmaConfig": "projects/kalendarz/karma.conf.js"
+          }
+        }
+      }
+    },
+    "my-library-playground": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/my-library-playground",
+      "sourceRoot": "projects/my-library-playground/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/my-library-playground",
+            "index": "projects/my-library-playground/src/index.html",
+            "main": "projects/my-library-playground/src/main.ts",
+            "polyfills": "projects/my-library-playground/src/polyfills.ts",
+            "tsConfig": "projects/my-library-playground/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/my-library-playground/src/favicon.ico",
+              "projects/my-library-playground/src/assets"
+            ],
+            "styles": [
+              "projects/my-library-playground/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/my-library-playground/src/environments/environment.ts",
+                  "with": "projects/my-library-playground/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "my-library-playground:build:production"
+            },
+            "development": {
+              "browserTarget": "my-library-playground:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "my-library-playground:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-library-playground/src/test.ts",
+            "polyfills": "projects/my-library-playground/src/polyfills.ts",
+            "tsConfig": "projects/my-library-playground/tsconfig.spec.json",
+            "karmaConfig": "projects/my-library-playground/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/my-library-playground/src/favicon.ico",
+              "projects/my-library-playground/src/assets"
+            ],
+            "styles": [
+              "projects/my-library-playground/src/styles.scss"
             ],
             "scripts": []
           }
