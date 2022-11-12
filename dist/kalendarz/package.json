@@ -1,0 +1,31 @@
+{
+  "name": "kalendarz",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "module": "fesm2015/kalendarz.mjs",
+  "es2020": "fesm2020/kalendarz.mjs",
+  "esm2020": "esm2020/kalendarz.mjs",
+  "fesm2020": "fesm2020/kalendarz.mjs",
+  "fesm2015": "fesm2015/kalendarz.mjs",
+  "typings": "kalendarz.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./kalendarz.d.ts",
+      "esm2020": "./esm2020/kalendarz.mjs",
+      "es2020": "./fesm2020/kalendarz.mjs",
+      "es2015": "./fesm2015/kalendarz.mjs",
+      "node": "./fesm2015/kalendarz.mjs",
+      "default": "./fesm2020/kalendarz.mjs"
+    }
+  },
+  "sideEffects": false
+}
