@@ -300,5 +300,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImpor
  * Generated bundle index. Do not edit.
  */
 
-export { KalendarzComponent, KalendarzModule, KalendarzService, TerminalComponent };
+export { KalendarzComponent, KalendarzModule, KalendarzService, TerminalComponent, TerminalService };
 //# sourceMappingURL=kalendarz.mjs.map
