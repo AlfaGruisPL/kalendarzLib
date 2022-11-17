@@ -1,21 +1,36 @@
 import { NgModule } from '@angular/core';
 import { KalendarzComponent } from './kalendarz.component';
+import { TerminalComponent } from "./terminal/terminal.component";
+import { TerminalService } from "./terminal/terminal.service";
+import { CookieService } from "ngx-cookie-service";
+import { FormsModule } from "@angular/forms";
 import * as i0 from "@angular/core";
 export class KalendarzModule {
 }
 KalendarzModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-KalendarzModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, declarations: [KalendarzComponent], exports: [KalendarzComponent] });
-KalendarzModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, imports: [[]] });
+KalendarzModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, declarations: [KalendarzComponent,
+        TerminalComponent], imports: [FormsModule], exports: [KalendarzComponent] });
+KalendarzModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, providers: [CookieService,
+        TerminalService
+    ], imports: [[
+            FormsModule
+        ]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
-                        KalendarzComponent
+                        KalendarzComponent,
+                        TerminalComponent
                     ],
-                    imports: [],
+                    imports: [
+                        FormsModule
+                    ],
                     exports: [
                         KalendarzComponent
+                    ],
+                    providers: [CookieService,
+                        TerminalService
                     ]
                 }]
         }] });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoia2FsZW5kYXJ6Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL2thbGVuZGFyei9zcmMvbGliL2thbGVuZGFyei5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFFBQVEsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN6QyxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSx1QkFBdUIsQ0FBQzs7QUFjM0QsTUFBTSxPQUFPLGVBQWU7OzRHQUFmLGVBQWU7NkdBQWYsZUFBZSxpQkFSeEIsa0JBQWtCLGFBS2xCLGtCQUFrQjs2R0FHVCxlQUFlLFlBTmpCLEVBQ1I7MkZBS1UsZUFBZTtrQkFWM0IsUUFBUTttQkFBQztvQkFDUixZQUFZLEVBQUU7d0JBQ1osa0JBQWtCO3FCQUNuQjtvQkFDRCxPQUFPLEVBQUUsRUFDUjtvQkFDRCxPQUFPLEVBQUU7d0JBQ1Asa0JBQWtCO3FCQUNuQjtpQkFDRiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBLYWxlbmRhcnpDb21wb25lbnQgfSBmcm9tICcuL2thbGVuZGFyei5jb21wb25lbnQnO1xuXG5cblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBbXG4gICAgS2FsZW5kYXJ6Q29tcG9uZW50XG4gIF0sXG4gIGltcG9ydHM6IFtcbiAgXSxcbiAgZXhwb3J0czogW1xuICAgIEthbGVuZGFyekNvbXBvbmVudFxuICBdXG59KVxuZXhwb3J0IGNsYXNzIEthbGVuZGFyek1vZHVsZSB7IH1cbiJdfQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoia2FsZW5kYXJ6Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL2thbGVuZGFyei9zcmMvbGliL2thbGVuZGFyei5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFFBQVEsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN6QyxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSx1QkFBdUIsQ0FBQztBQUMzRCxPQUFPLEVBQUMsaUJBQWlCLEVBQUMsTUFBTSwrQkFBK0IsQ0FBQztBQUNoRSxPQUFPLEVBQUMsZUFBZSxFQUFDLE1BQU0sNkJBQTZCLENBQUM7QUFDNUQsT0FBTyxFQUFDLGFBQWEsRUFBQyxNQUFNLG9CQUFvQixDQUFDO0FBQ2pELE9BQU8sRUFBQyxXQUFXLEVBQUMsTUFBTSxnQkFBZ0IsQ0FBQzs7QUFvQjNDLE1BQU0sT0FBTyxlQUFlOzs0R0FBZixlQUFlOzZHQUFmLGVBQWUsaUJBZHhCLGtCQUFrQjtRQUNsQixpQkFBaUIsYUFJakIsV0FBVyxhQUdYLGtCQUFrQjs2R0FNVCxlQUFlLGFBSmhCLENBQUMsYUFBYTtRQUN0QixlQUFlO0tBQ2hCLFlBVFE7WUFFUCxXQUFXO1NBQ1o7MkZBUVUsZUFBZTtrQkFoQjNCLFFBQVE7bUJBQUM7b0JBQ1IsWUFBWSxFQUFFO3dCQUNaLGtCQUFrQjt3QkFDbEIsaUJBQWlCO3FCQUNsQjtvQkFDRCxPQUFPLEVBQUU7d0JBRVAsV0FBVztxQkFDWjtvQkFDRCxPQUFPLEVBQUU7d0JBQ1Asa0JBQWtCO3FCQUNuQjtvQkFDRCxTQUFTLEVBQUMsQ0FBQyxhQUFhO3dCQUN0QixlQUFlO3FCQUNoQjtpQkFDRiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBLYWxlbmRhcnpDb21wb25lbnQgfSBmcm9tICcuL2thbGVuZGFyei5jb21wb25lbnQnO1xuaW1wb3J0IHtUZXJtaW5hbENvbXBvbmVudH0gZnJvbSBcIi4vdGVybWluYWwvdGVybWluYWwuY29tcG9uZW50XCI7XG5pbXBvcnQge1Rlcm1pbmFsU2VydmljZX0gZnJvbSBcIi4vdGVybWluYWwvdGVybWluYWwuc2VydmljZVwiO1xuaW1wb3J0IHtDb29raWVTZXJ2aWNlfSBmcm9tIFwibmd4LWNvb2tpZS1zZXJ2aWNlXCI7XG5pbXBvcnQge0Zvcm1zTW9kdWxlfSBmcm9tIFwiQGFuZ3VsYXIvZm9ybXNcIjtcblxuXG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW1xuICAgIEthbGVuZGFyekNvbXBvbmVudCxcbiAgICBUZXJtaW5hbENvbXBvbmVudFxuICBdLFxuICBpbXBvcnRzOiBbXG5cbiAgICBGb3Jtc01vZHVsZVxuICBdLFxuICBleHBvcnRzOiBbXG4gICAgS2FsZW5kYXJ6Q29tcG9uZW50XG4gIF0sXG4gIHByb3ZpZGVyczpbQ29va2llU2VydmljZSxcbiAgICBUZXJtaW5hbFNlcnZpY2VcbiAgXVxufSlcbmV4cG9ydCBjbGFzcyBLYWxlbmRhcnpNb2R1bGUgeyB9XG4iXX0=
