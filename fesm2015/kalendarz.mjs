@@ -3,6 +3,7 @@ import { Injectable, Component, EventEmitter, ViewEncapsulation, ViewChild, Outp
 import * as i1 from 'ngx-cookie-service';
 import { CookieService } from 'ngx-cookie-service';
 import * as i2 from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import * as i2$1 from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
@@ -264,10 +265,12 @@ class KalendarzModule {
 }
 KalendarzModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
 KalendarzModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, declarations: [KalendarzComponent,
-        TerminalComponent], imports: [FormsModule], exports: [KalendarzComponent] });
+        TerminalComponent], imports: [BrowserModule,
+        FormsModule], exports: [KalendarzComponent, TerminalComponent] });
 KalendarzModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, providers: [CookieService,
         TerminalService
     ], imports: [[
+            BrowserModule,
             FormsModule
         ]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: KalendarzModule, decorators: [{
@@ -278,10 +281,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImpor
                         TerminalComponent
                     ],
                     imports: [
+                        BrowserModule,
                         FormsModule
                     ],
                     exports: [
-                        KalendarzComponent
+                        KalendarzComponent, TerminalComponent
                     ],
                     providers: [CookieService,
                         TerminalService
@@ -297,5 +301,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImpor
  * Generated bundle index. Do not edit.
  */
 
-export { KalendarzComponent, KalendarzModule, KalendarzService };
+export { KalendarzComponent, KalendarzModule, KalendarzService, TerminalComponent };
 //# sourceMappingURL=kalendarz.mjs.map
